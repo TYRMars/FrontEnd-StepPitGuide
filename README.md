@@ -100,6 +100,22 @@ media = "screen and (min-width:401px) and (max-width:600px)"
 ---
 
 ## 小技巧
-* 图片
+### 图片
     * 必不可少的图片使用<img>引入
     * 可有可无的装饰性图片可以用标签的style引入
+
+### 如何避免出发repaint/reflow
+* Display,的值会影响布局，从而影响整个页面元素的位置变化，所以会更改render树的结构
+* 先将元素从document中删除，完成修改后再把元素放回原来的位置
+* 如果需要创建多个DOM节点，可以使用DocumentFragment创建完成后一次性的加入document
+```JavaScript
+//Create the fragment
+var fragment = document.createDocumentFragment();
+//add Dom to fragment
+var spanNode = document.createElement("div");
+for(var i = 0; i<10 ; i++){
+  (function (i) {
+    spanNode
+  })(i)
+}
+```
