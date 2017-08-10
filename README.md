@@ -14,6 +14,34 @@
 ## 01-01
 ### 响应式开发网站设计概念
 
+* progressive enhancement 渐进增强
+* graceful degradation    优雅降级 +
+
+* 不管设备大小，应该包含相同的内容
+* 根据设备大小不同，显示不同内容
+
+```CSS
+/*-------- iphone 4 and 4s ---------*/
+/* Portranit and landscape */
+@media only screen
+and (min-device-width:320px)
+and (max-device-width:480px)
+and(-webkit-min-device-pixel-ratio:2){
+
+}
+/*-------- iphone 5 and 5s ---------*/
+/* Portranit and landscape */
+@media only screen
+and (min-device-width:320px)
+and (max-device-width:568px)
+and(-webkit-min-device-pixel-ratio:2){
+
+}
+```
+* 0-480 小屏幕
+* 481-800 中屏幕
+* 801-1400 大屏幕
+* 1400+ 超大型屏幕
 
 ## 01-02
 ### 响应式网站的优点与缺点
@@ -97,6 +125,16 @@ media = "screen and (min-width:401px) and (max-width:600px)"
     * 可视视口（visal viewport）
     * 理想视口（ideal viewport）
 
+```html
+<meta name="viewport" content="width=device-width"></meta>
+```
+* 如果不写以上这句话布局视口的宽度是厂商的默认值
+* 设置以上这句话以后布局视口将成为理想视口
+
+```html
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+```
+* minimum-scale 最小缩放比例 maximum-scale 最大缩放比例 user-scalable 禁用了用户缩放
 ---
 
 ## 小技巧
