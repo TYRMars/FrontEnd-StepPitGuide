@@ -7,6 +7,7 @@
 * [01-01](https://github.com/TYRMars/ResponseiveWeb#01-01) `响应式开发网站设计概念`
 * [01-02](https://github.com/TYRMars/ResponseiveWeb#01-02) `响应式网站的优点与缺点`
 * [01-03](https://github.com/TYRMars/ResponseiveWeb#01-03) `媒体查询`
+* [01-04](https://github.com/TYRMars/ResponseiveWeb#01-04) `px,em,rem`
 
 * 更新中！
 ---
@@ -135,6 +136,23 @@ media = "screen and (min-width:401px) and (max-width:600px)"
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 ```
 * minimum-scale 最小缩放比例 maximum-scale 最大缩放比例 user-scalable 禁用了用户缩放
+
+## 01-04
+### px,em,rem
+#### px
+* 1px等于1个像素
+#### em
+* em 相对单位长度
+  1. em相对于参照物为父元素的font-size
+  2. em具有继承的特点
+  3. 当没有设置font-size时，浏览器会有一个默认的em设置：1em = 16px
+#### rem
+* rem的相对参照物为根元素html,相对于参照物固定不变所以比较好计算
+* 当没有设置font-size时，浏览器会有一个默认的rem设置：1rem=16px,这点与em是一致的
+* 样式实现
+    * font-size:62.5% 1rem = 10px (10/16*100%)
+    * font-size:100% 1rem = 16px
+
 ---
 
 ## 小技巧
