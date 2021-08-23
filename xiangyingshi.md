@@ -10,7 +10,6 @@
 * [01-02](https://github.com/TYRMars/ResponseiveWeb#01-02) `响应式网站的优点与缺点`
 * [01-03](https://github.com/TYRMars/ResponseiveWeb#01-03) `媒体查询`
 * [01-04](https://github.com/TYRMars/ResponseiveWeb#01-04) `px,em,rem`
-* 更新中！
 
 **01-01**
 
