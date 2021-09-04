@@ -15,3 +15,11 @@
 
 * [响应式开发](bu-ju/xiangyingshi.md)
 
+## 技术探索
+
+* [GraphQL](ji-shu-tan-suo/graphql.md)
+
+## 性能优化
+
+* [前端性能优化](xing-neng-you-hua/qian-duan-xing-neng-you-hua.md)
+
