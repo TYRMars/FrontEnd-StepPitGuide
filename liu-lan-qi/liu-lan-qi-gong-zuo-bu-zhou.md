@@ -6,7 +6,17 @@
 
 ## 输入URL
 
-Browser Process 浏览器线程
-
-UI线程、网络线程
+1. 启动浏览器的浏览器进程（Browser Process）
+2. 浏览器进程下包含UI线程和网络线程
+3. 首先网络线程会访问DNS，得到访问相应网站的IP
+4. 网络线程获取到网站信息后会通过SafeBrowsing来检查是否是安全站点
+5. 网络线程通过验证后，会告诉UI线程可以渲染的数据
+6. UI线程会创建一个渲染器进程（RendererProcess），浏览器进程会通过IPC管道传送到渲染器进程，正式进入渲染流程
+7. 渲染器的主线程将HTML解析，构造DOM树数据结构。
+8. 在DOM树构造中会创建Document为根节点的DOM树
+9. HTML中如果有Script标签，浏览器不知道Script会不会影响当前结构，所以会先去执行脚本（所以Script要放在合适位置或者使用async或defer）
+10. 接下来要进行布局（Layout），LayoutTree和DOM Tree 并非一一对应的，比如设置了`display:none`   DOM Tree会有这个节点，但是在LayoutTree中不会出现。当在LayoutTree中设置伪类后，DOM Tree 并没有相关的节点。LayoutTree是根据DOMTree和样式生成的，是最后会渲染到浏览器上的节点。（绘制顺序，渲染器的主线程会知道绘制顺序。栅格化是绘制到页面上，现在Chrome使用的是合成线程）
+11. 主线程遍历LayoutTree生成 Layer\(图层\)Tree，当LayerTree和绘制顺序确定后，主线程将这些信息传递给合成器线程，合成器线程将每个图层栅格化。
+12. 图层可能会过大，所以会分解成多个图块，发送给栅格线程，之后栅格线程栅格化每个图块，并将它们存储在GPU内存中。
+13. 当图块栅格画完以后，合成器线程将收集“draw quads”的图块信息
 
