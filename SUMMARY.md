@@ -27,4 +27,6 @@
 ## 设计模式
 
 * [单例模式](she-ji-mo-shi/dan-li-mo-shi.md)
+* [策略模式](she-ji-mo-shi/ce-lve-mo-shi.md)
+* [代理模式](she-ji-mo-shi/dai-li-mo-shi.md)
 
