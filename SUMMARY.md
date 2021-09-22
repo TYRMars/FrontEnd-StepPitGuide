@@ -24,3 +24,7 @@
 
 * [前端性能优化](xing-neng-you-hua/qian-duan-xing-neng-you-hua.md)
 
+## 设计模式
+
+* [单例模式](she-ji-mo-shi/dan-li-mo-shi.md)
+
