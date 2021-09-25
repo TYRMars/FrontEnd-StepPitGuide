@@ -19,6 +19,7 @@
 ## 技术探索
 
 * [GraphQL](ji-shu-tan-suo/graphql.md)
+* [Electron](ji-shu-tan-suo/electron.md)
 
 ## 性能优化
 
